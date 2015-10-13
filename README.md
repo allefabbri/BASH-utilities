@@ -4,7 +4,7 @@ This repo contains two very simple but handy *BASH* scripts to deal with numbers
 #### Installation
 Just copy ``numc.sh`` and ``numd.sh`` to your script folder and create a hard link in ``/usr/bin/`` (requires root's privileges).
 
-* ##### Number Converter
+#### Number Converter
 **Usage**
 ```
 numc.sh [ib] [ob] number
@@ -27,7 +27,7 @@ b = binary, base 2
 11111111
 ```
 
-* ##### Number Displayer
+##### Number Displayer
 **Usage**
 ```
 numd.sh [ib] number
