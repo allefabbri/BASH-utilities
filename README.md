@@ -7,7 +7,7 @@ Just copy ``numd.sh`` to your script folder and create a hard link in ``/usr/bin
 ##### Number Displayer
 **Usage**
 ```
-numd.sh [ib] number
+numd.sh [ib] <arithmetic expression>
 ```
 where
 ```
