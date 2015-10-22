@@ -33,7 +33,7 @@ h=1FF o=777 d=511 b=111111111
 ```
 
 ## MAC address changer
-Quick way of changing, only for the current session, the MAC address of the ethernet card (requires ``root`` privileges)
+Quick way of changing, only for the current session, the MAC address of the ethernet card (requires ``root`` privileges). The new address is hardcorded inside the script so change it according to your needs.
 
 **Usage and Sample Output**
 ```
