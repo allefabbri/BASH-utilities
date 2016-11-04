@@ -44,3 +44,12 @@ eth0      Link encap:Ethernet  HWaddr XX:XX:XX:XX:XX:XX
 New MAC address
 eth0      Link encap:Ethernet  HWaddr YY:YY:YY:YY:YY:YY
 ```
+
+## Make/C++ blank project generator
+A simple generator that creates a blank C++ main file and the corresponding makefile.
+
+## Library deployer
+This tool deploys a user-defined file or folder content into a number of hardcoded directories. The purpose is to simplify the proliferation of copies of the same lib files. Use with caution since it can overwrite importante changes, especially if used with the `-y` flag.
+
+
+
