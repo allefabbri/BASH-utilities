@@ -1,11 +1,11 @@
 # BASH-utilities
-This repo contains some very simple but handy *BASH* scripts to make your IT life a bit easier.
+Some *BASH* scripts.
 
 #### Installation
 Just copy the selected script to your script folder and create a link in ``/usr/bin/`` (requires root's privileges).
 
 ## Number Displayer
-A nice tool to deal with numbers base conversion and arithmetic in the computer world.
+Tool to deal with numbers base conversion and arithmetic (requires bc).
 
 **Usage**
 ```
@@ -51,5 +51,5 @@ A simple generator that creates a blank C++ main file and the corresponding make
 ## Library deployer
 This tool deploys a user-defined file or folder content into a number of hardcoded directories. The purpose is to simplify the proliferation of copies of the same lib files. Use with caution since it can overwrite importante changes, especially if used with the `-y` flag.
 
-
-
+## Count Line Of Code
+Count the line number of all the .c .cpp .h .hpp files starting a recursive search from the folder the script is run.

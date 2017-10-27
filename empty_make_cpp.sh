@@ -1,21 +1,21 @@
 #!/bin/bash
 
 name="test"
-[[ "$1" != "" ]] && name="$1" && echo true
+[[ "$1" != "" ]] && name="$1"
 
 echo -e "#include <iostream>
 
 using namespace std;
 
-int main(){
-
-	cout << \"Hello, World!\" << endl;
+int main()
+{
+	cout << \"$name\" << endl;
 
 	return 0;
 }
 " > $name.cpp
 
 echo -e "all : $name.cpp
-	\$(CXX) -std=c++11 -o $name.exe $name.cpp
-	./$name.exe
+	\$(CXX) -std=c++11 -o $name $name.cpp
+	./$name
 " > makefile
