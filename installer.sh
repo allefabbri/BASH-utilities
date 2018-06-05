@@ -23,8 +23,8 @@ LINKDIR=$HOME/bin
 echo "Installing in : $LINKDIR"
 mkdir -p $LINKDIR
 
-declare -a scripts=(numd.sh timeconverter.sh)
-declare -a apps=(nd tico)
+declare -a scripts=(numd.sh timeconverter.sh empty_makefile_cpp.sh empty_cmake_cpp.sh)
+declare -a apps=(nd tico empty_mcpp empty_ccpp)
 
 for i in ${!scripts[*]}
 do
@@ -32,7 +32,11 @@ do
   app=${apps[$i]}
   echo "Installing : $script (as $app)"
   [ -f $LINKDIR/$app ] && echo "Link already exists..."
-  [ -f $LINKDIR/$app ] || echo "Creating link..."; ln -s $WORKSPACE/BASH-utilities/$script $LINKDIR/$app
+  if ! [ -f $LINKDIR/$app ]
+  then
+    echo "Creating link..."
+    ln -s $WORKSPACE/BASH-utilities/$script $LINKDIR/$app
+  fi
 done
 
 if ! [[ $PATH == *"$LINKDIR"* ]]
