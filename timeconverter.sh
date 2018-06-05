@@ -33,17 +33,38 @@ if (( $# != 2 )); then
   usage
 fi
 
+unix_to_date() {
+  case $OSTYPE in
+    *"darwin"*)
+    echo $(date -j -f "%s" $ut +"%Y%m%d-%H%M%S")
+    ;;
+    *"linux"*)
+    hrf=$(echo $1 | sed 's/./&:/13;s/./&:/11;s/./ /9;s|.|&/|6;s|.|&/|4')
+    echo $(date -d "$hrf" +%s)
+    ;;
+  esac
+}
+
+date_to_unix() {
+  case $OSTYPE in
+    *"darwin"*)
+    echo $(date -j -f "%Y%m%d-%H%M%S" $1 +"%s")
+    ;;
+    *"linux"*)
+    echo $(date -d "$hrf" +%s)
+    ;;
+  esac
+}
+
 case $1 in
   h )
   hr=$2
-  hrf=$(echo $hr | sed 's/./&:/13;s/./&:/11;s/./ /9;s|.|&/|6;s|.|&/|4')
-  ut=$(date -d "$hrf" +%s)
-#  ut=$(date -j -f "%Y%m%d-%H%M%S" $hr +"%s")
+  ut=$(date_to_unix $2)
   ;;
   u )
   ut=$2
-  hr=$(date -d @$ut +"%Y%m%d-%H%M%S")
-#  hr=$(date -j -u -f "%s" $ut +"%Y%m%d-%H%M%S")
+  hr=$(unix_to_date $2)
+#
   ;;
 esac
 
