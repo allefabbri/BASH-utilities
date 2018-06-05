@@ -24,7 +24,7 @@ echo "Installing in : $LINKDIR"
 mkdir -p $LINKDIR
 
 declare -a scripts=(numd.sh timeconverter.sh)
-declare -a apps=(nd tc)
+declare -a apps=(nd tico)
 
 for i in ${!scripts[*]}
 do
