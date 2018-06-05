@@ -33,15 +33,17 @@ if (( $# != 2 )); then
   usage
 fi
 
-
 case $1 in
   h )
   hr=$2
-  ut=$(date -j -f "%Y%m%d-%H%M%S" $hr +"%s")
+  hrf=$(echo $hr | sed 's/./&:/13;s/./&:/11;s/./ /9;s|.|&/|6;s|.|&/|4')
+  ut=$(date -d "$hrf" +%s)
+#  ut=$(date -j -f "%Y%m%d-%H%M%S" $hr +"%s")
   ;;
   u )
   ut=$2
-  hr=$(date -j -u -f "%s" $ut +"%Y%m%d-%H%M%S")
+  hr=$(date -d @$ut +"%Y%m%d-%H%M%S")
+#  hr=$(date -j -u -f "%s" $ut +"%Y%m%d-%H%M%S")
   ;;
 esac
 
