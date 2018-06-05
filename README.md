@@ -4,6 +4,9 @@ Some *BASH* scripts.
 #### Installation
 Just copy the selected script to your script folder and create a link in ``/usr/bin/`` (requires root's privileges).
 
+## Unix Time Converter
+
+
 ## Number Displayer
 Tool to deal with numbers base conversion and arithmetic (requires bc).
 
