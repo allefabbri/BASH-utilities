@@ -19,14 +19,12 @@
 #!/bin/bash
 usage(){
   echo \
-"Usage:   $0 [ibase] <arithmetic expression>
+"Usage:   $0 format timestamp
 
-          ibase = h/o/d/b
+          format = [h|u]
 
-          h = hexadecimal, base 16 (either lower or upper case for letteral digits)
-          o = octal, base 8
-          d = decimal, base 10
-          b = binary, base 2
+          h = human readable timestamp YYYYMMDD-HHMMSS (UTC)
+          u = unix timestamp (UTC)
 "
   exit 0
 }
@@ -35,36 +33,18 @@ if (( $# != 2 )); then
   usage
 fi
 
+
 case $1 in
   h )
-  hex=`echo "$2" | tr a-z A-Z`
-  hex=`echo "obase=16; ibase=16; $hex" | bc`
-  oct=`echo "obase=8;  ibase=16; $hex" | bc`
-  dec=`echo "obase=10; ibase=16; $hex" | bc`
-  bin=`echo "obase=2;  ibase=16; $hex" | bc`
-    ;;
-  o )
-  oct=`echo "obase=8;  ibase=8; $2"   | bc`
-  hex=`echo "obase=16; ibase=8; $oct" | bc`
-  dec=`echo "obase=10; ibase=8; $oct" | bc`
-  bin=`echo "obase=2;  ibase=8; $oct" | bc`
-    ;;
-  b )
-  bin=`echo "obase=2;  ibase=2; $2"   | bc`
-  hex=`echo "obase=16; ibase=2; $bin" | bc`
-  oct=`echo "obase=8;  ibase=2; $bin" | bc`
-  dec=`echo "obase=10; ibase=2; $bin" | bc`
-    ;;
-  d )
-  dec=`echo "obase=10; ibase=10; $2"   | bc`
-  hex=`echo "obase=16; ibase=10; $dec" | bc`
-  oct=`echo "obase=8;  ibase=10; $dec" | bc`
-  bin=`echo "obase=2;  ibase=10; $dec" | bc`
-    ;;
-  *)
-  echo "Wrong INPUT base specifier"
-  usage
-    ;;
+  hr=$2
+  ut=$(date -j -f "%Y%m%d-%H%M%S" $hr +"%s")
+  ;;
+  u )
+  ut=$2
+  hr=$(date -j -u -f "%s" $ut +"%Y%m%d-%H%M%S")
+  ;;
 esac
 
-echo "h=$hex o=$oct d=$dec b=$bin"
+echo "UTC Unix timestamp : $ut"
+echo "UTC Date time      : $hr"
+
