@@ -39,8 +39,7 @@ unix_to_date() {
     echo $(date -j -f "%s" $ut +"%Y%m%d-%H%M%S")
     ;;
     *"linux"*)
-    hrf=$(echo $1 | sed 's/./&:/13;s/./&:/11;s/./ /9;s|.|&/|6;s|.|&/|4')
-    echo $(date -d "$hrf" +%s)
+    echo $(date -d @$1 +"%Y%m%d-%H%M%S")
     ;;
   esac
 }
@@ -51,6 +50,7 @@ date_to_unix() {
     echo $(date -j -f "%Y%m%d-%H%M%S" $1 +"%s")
     ;;
     *"linux"*)
+    hrf=$(echo $1 | sed 's/./&:/13;s/./&:/11;s/./ /9;s|.|&/|6;s|.|&/|4')
     echo $(date -d "$hrf" +%s)
     ;;
   esac
