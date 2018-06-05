@@ -5,25 +5,41 @@ Some *BASH* scripts.
 Just copy the selected script to your script folder and create a link in ``/usr/bin/`` (requires root's privileges).
 
 ## Unix Time Converter
+Tool to convert between unic timestamp and human readable format (requires date).
 
+**Usage**
+```
+tico format timestamp
+
+     format = [h|u]
+
+     h = human readable timestamp YYYYMMDD-HHMMSS (UTC)
+     u = unix timestamp (UTC)
+```
+
+**Sample Output**
+```
+# tico h 20180416-145500
+UTC Unix timestamp : 1523883300
+UTC Date time      : 20180416-145500
+
+# tico u 1523883300
+UTC Unix timestamp : 1523883300
+UTC Date time      : 20180416-125500
+```
 
 ## Number Displayer
 Tool to deal with numbers base conversion and arithmetic (requires bc).
 
 **Usage**
 ```
-numd.sh [ib] <arithmetic expression>
-```
-where
-```
-ib = h/o/d/b = "Input Base"
-```
-and
-```
-h = hexadecimal, base 16 (either lower or upper case for letteral digits)
-o = octal, base 8
-d = decimal, base 10
-b = binary, base 2
+nd  [ib] <arithmetic expression>
+     ib = h/o/d/b = "Input Base"
+ 
+     h = hexadecimal, base 16 (either lower or upper case for letteral digits)
+     o = octal, base 8
+     d = decimal, base 10
+     b = binary, base 2
 ```
 **Sample Output**
 ```
