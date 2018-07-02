@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Pass correct path to windows' explorer.exe
+# from within wsl
+
+explorer.exe $(wslpath -w $1)

@@ -23,8 +23,8 @@ LINKDIR=$HOME/bin
 echo "Installing in : $LINKDIR"
 mkdir -p $LINKDIR
 
-declare -a scripts=(numd.sh timeconverter.sh empty_makefile_cpp.sh empty_cmake_cpp.sh)
-declare -a apps=(nd tico empty_mcpp empty_ccpp)
+declare -a scripts=(numd.sh timeconverter.sh empty_makefile_cpp.sh empty_cmake_cpp.sh explorer)
+declare -a apps=(nd tico empty_mcpp empty_ccpp explorer)
 
 for i in ${!scripts[*]}
 do
