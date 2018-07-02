@@ -1,4 +1,6 @@
-# Copyright 2015, Alessandro Fabbri
+#!/usr/bin/env bash
+
+# Copyright 2018, Alessandro Fabbri
 # for any question, please mail rommacc@yahoo.it
 
 #************************************************************************
@@ -16,7 +18,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>. *
 #***********************************************************************/
 
-#!/bin/bash
 new_mac="20:6A:8A:DE:71:6A"
 echo "echo "Old MAC address""            | sudo bash
 echo "ifconfig -a | grep 'eth0.*HWaddr'" | sudo bash

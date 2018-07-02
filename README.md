@@ -2,7 +2,10 @@
 Some *BASH* scripts.
 
 #### Installation
-Just copy the selected script to your script folder and create a link in ``/usr/bin/`` (requires root's privileges).
+Run `installer.sh` which
+- creates a `bin` folder in user's home
+- makes links to all the scripts in `bin` folder
+- add `bin` folder to `PATH` by modifying user's `.bashrc`
 
 ## Unix Time Converter
 Tool to convert between unic timestamp and human readable format (requires date).
@@ -35,7 +38,7 @@ Tool to deal with numbers base conversion and arithmetic (requires bc).
 ```
 nd  [ib] <arithmetic expression>
      ib = h/o/d/b = "Input Base"
- 
+
      h = hexadecimal, base 16 (either lower or upper case for letteral digits)
      o = octal, base 8
      d = decimal, base 10
@@ -72,3 +75,11 @@ This tool deploys a user-defined file or folder content into a number of hardcod
 
 ## Count Line Of Code
 Count the line number of all the .c .cpp .h .hpp files starting a recursive search from the folder the script is run.
+
+## Explorer
+Tool specific to Window's WSL. It wraps a call to `explorer.exe` passing the correct path to it.
+
+**Usage**
+```
+explorer any/wsl/path
+```

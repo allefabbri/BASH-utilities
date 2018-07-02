@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Copyright 2018, Alessandro Fabbri
 # for any question, please mail rommacc@yahoo.it
 
@@ -16,7 +18,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>. *
 #***********************************************************************/
 
-#!/bin/bash
 
 LINKDIR=$HOME/bin
 
